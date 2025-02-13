@@ -84,8 +84,6 @@ The system consists of the following major components:
 
 ---
 
-## Installation & Setup
-### **Clone the Repository**
+## Installation & Setup for requirments packages
 ```bash
-git clone https://github.com/your-repo-link.git
-cd quantum-task-scheduler
+pip freeze > requirements.txt
