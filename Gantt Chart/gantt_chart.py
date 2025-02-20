@@ -7,7 +7,7 @@ tasks = [
     ("Data Storage and Management", "2025-02-02", "2025-02-18"),
     ("Simulation Research", "2025-02-03", "2025-02-20"),
     ("Data Simulation & Augmentation", "2025-02-03", "2025-02-28"),
-    ("Task secheduling", "2025-02-28", "2025-3-20"),
+    ("Task scheduling", "2025-02-28", "2025-3-20"),
     ("Interim Report", "2025-02-03", "2025-03-26"),
     ("Reinforcement Learning for Resource Management", "2025-03-01", "2025-03-26"),
     ("Model Updates", "2025-03-26", "2025-03-31"),
