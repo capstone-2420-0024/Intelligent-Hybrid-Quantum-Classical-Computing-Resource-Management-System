@@ -1,6 +1,6 @@
-import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
+import pandas as pd
 
 def data_vis(df):
     df['datetime'] = pd.to_datetime(df['datetime'])  # transform the time format
