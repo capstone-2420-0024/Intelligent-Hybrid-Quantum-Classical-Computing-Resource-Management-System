@@ -10,7 +10,7 @@ model = PPO("MlpPolicy", env, verbose=1, learning_rate=1e-4)
 model.learn(total_timesteps=50000)
 
 # ---- Evaluate ----
-print("\n✅ Evaluation Result:")
+print("\n Evaluation Result:")
 rewards = []
 for _ in range(10):
     obs = env.reset()
@@ -66,31 +66,7 @@ ax2.tick_params(axis='y', labelcolor='red')
 plt.title("Task Completion and Average Waiting Time Over Time")
 plt.tight_layout()
 plt.savefig("ppo_task_progress.png")
-print("✅ 图像已保存为 'ppo_task_progress.png'")
+print(" 图像已保存为 'ppo_task_progress.png'")
 plt.show()
 
 
-
-# ---------------------- Gantt Chart ----------------------
-# 提取任务运行区间
-task_intervals = []
-for task_id, (start, end) in env.env.task_execution_log.items():
-    task_intervals.append((f"T{task_id}", start, end))
-
-# 按照开始时间排序
-task_intervals.sort(key=lambda x: x[1])
-
-# 绘图
-fig, ax = plt.subplots(figsize=(10, 6))
-for i, (task_name, start, end) in enumerate(task_intervals):
-    ax.broken_barh([(start, end - start)], (i - 0.4, 0.8), facecolors='tab:blue')
-    ax.text(start + 0.1, i, task_name, va='center', ha='left', fontsize=8)
-
-ax.set_yticks(range(len(task_intervals)))
-ax.set_yticklabels([t[0] for t in task_intervals])
-ax.set_xlabel("Time")
-ax.set_title("Gantt Chart of Task Scheduling")
-ax.grid(True)
-plt.tight_layout()
-plt.savefig("ppo_gantt_chart.png")
-plt.show()
